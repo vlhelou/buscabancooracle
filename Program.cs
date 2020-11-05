@@ -3,6 +3,8 @@ using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Security.Cryptography;
 
+
+
 namespace BuscaBanco
 {
     class Program
