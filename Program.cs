@@ -13,8 +13,8 @@ namespace BuscaBanco
         {
 
             OracleConnectionStringBuilder cnb = new OracleConnectionStringBuilder();
-            string chave = "Like se quiser use o %";
-            OracleConnection cn = new OracleConnection("String de conexão");
+            string chave = "Texto a ser pesquisado";
+            OracleConnection cn = new OracleConnection("string de conexao");
             cn.Open();
             Console.Title = "Conectou!!!!!!";
             OracleCommand cmd = cn.CreateCommand();
@@ -75,12 +75,13 @@ namespace BuscaBanco
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine($"{ln["OWNER"].ToString()}.{ln["TABLE_NAME"].ToString()} \r\n \t Encontrados = {encontrados}, Total de registros: {ln["num_rows"].ToString()}");
+                            Console.WriteLine(sql.ToString());
                         }
 
                     } catch(Exception ex)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine($"Objeto: {ln["OWNER"].ToString()}.{ln["TABLE_NAME"].ToString()}  erro:{ex.Message}");
                     }
                     //Console.WriteLine("======>" + coluna["column_name"].ToString());
 
