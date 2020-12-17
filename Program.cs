@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 
 
 
+
 namespace BuscaBanco
 {
     class Program
